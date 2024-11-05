@@ -1,0 +1,161 @@
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #ffff;
+  background: linear-gradient(to bottom right, #001f3f, #e6e6fa);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* Navbar */
+#navbar {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #333;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+#navbar a {
+  color: #f4f4f9;
+  text-decoration: none; /* No underline in navbar links */
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+#navbar a:hover {
+  color: #ff6347;
+}
+
+/* Welcome Section */
+#welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  background-color: #D8BFD8;
+  color: #333;
+  text-align: center;
+  padding-top: 4rem;
+}
+
+
+/* General section layout */
+.section-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.section-title {
+  flex: 1;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffff;
+  text-align: center; /* Center the title */
+  margin-bottom: 1rem; /* Space below title */
+}
+
+.about-details {
+  display: flex;
+  justify-content: space-between; /* Space between items */
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.detail-item {
+  flex: 1; /* Equal space for each item */
+}
+
+.section-content {
+  flex: 3;
+}
+
+/* Projects Section layout */
+#projects .section-content {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to create rows */
+  justify-content: center; /* Center the project tiles */
+}
+
+.project-tile {
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+  background: #2e2e2e;
+  margin: 1rem; /* Space between project tiles */
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 30%; /* Limit width to 30% for three tiles in a row */
+  text-decoration: none; /* No underline */
+  transition: transform 0.3s;
+}
+
+.project-tile:hover {
+  transform: scale(1.02);
+}
+
+/* Image styles */
+.project-image {
+  width: 100%; /* Full width of the tile */
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0.5rem; /* Space between image and text */
+}
+
+/* Center text and remove underline */
+.project-info {
+  text-align: center; /* Center the text */
+}
+
+.project-info h3,
+.project-info p {
+  text-decoration: none; /* Ensure no underline */
+  color: inherit; /* Inherit color from parent */
+}
+
+/* Change text color on hover */
+.project-tile:hover .project-info h3,
+.project-tile:hover .project-info p {
+  color: #ff6347; /* Change to your desired hover color */
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .section-container {
+      flex-direction: column;
+      margin-bottom: 30px;
+  }
+
+  .section-title, .section-content {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px;
+  }
+
+  #projects .section-content {
+      align-items: center;
+      margin-bottom: 30px;
+  }
+
+  .project-tile {
+      max-width: 90%; /* Full width on smaller screens */
+  }
+}
